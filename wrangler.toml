@@ -5,7 +5,7 @@ compatibility_date = "2024-02-19"
 
 [vars]
 # 客户端请求时允许通过请求的 API KEY，无需在当前环境变量当中手动添加 Bearer，目前只支持一个，未来可以升级为数组/toml/yaml 或专门的管理工具
-ALLOW_API_KEY=your_api_key 
+ALLOW_API_KEY=your_api_key
 
 # 服务端跨域配置
 # 允许访问的域名，多个域名使用逗号分隔(中间不能有空格)，例如：http://localhost:3000,https://chat.example.com
