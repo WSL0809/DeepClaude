@@ -1,0 +1,4 @@
+name = "deepclaude"  # 替换为您的 Worker 名称
+main = "app/main.py"
+compatibility_flags = ["python_workers"]
+compatibility_date = "2024-02-19"
