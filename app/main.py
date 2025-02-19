@@ -1,7 +1,6 @@
 import os
 import sys
 
-from dotenv import load_dotenv
 from fastapi import Depends, FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
@@ -10,8 +9,14 @@ from app.deepclaude.deepclaude import DeepClaude
 from app.utils.auth import verify_api_key
 from app.utils.logger import logger
 
-# 加载环境变量
-load_dotenv()
+env = os.environ.get("ENVIRONMENT", "cf")
+if env != "cf":
+    try:
+        from dotenv import load_dotenv
+        load_dotenv()
+        print("Loaded environment variables from .env file.")
+    except ImportError:
+        print("Warning: python-dotenv is not available. Skipping .env loading.")
 
 app = FastAPI(title="DeepClaude API")
 
